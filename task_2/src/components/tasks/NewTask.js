@@ -2,11 +2,13 @@ import { useOutletContext } from "react-router-dom";
 
 export default function NewTask()
 {
-    function addTask()
+    function submit(e)
     {
+        e.preventDefault();
+
         const input = document.querySelector("input");
         const newTask = {
-            id: tasks.length + 1,
+            id: tasks.length + 1 || 1,
             task: input.value,
             date: new Date().toLocaleDateString()
         }
@@ -21,9 +23,9 @@ export default function NewTask()
     const [tasks, setTasks] = useOutletContext();
 
     return (
-        <div>
+        <form onSubmit={submit}>
             <input placeholder="Enter a new task"/>
-            <button className="attached" onClick={addTask}>Add task</button>
-        </div>
+            <button className="attached">Add task</button>
+        </form>
     );
 }
