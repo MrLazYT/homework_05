@@ -7,12 +7,12 @@ export default function TaskLayout()
         {
             id: 1,
             task: "Complete homework",
-            date: new Date().toLocaleDateString()
+            date: new Date().toLocaleDateString(),
         },
         {
             id: 2,
             task: "Walk",
-            date: new Date().toLocaleDateString()
+            date: new Date().toLocaleDateString(),
         },
     ];
 
